@@ -5,14 +5,14 @@ transcript on
 vlib work
 
 # Compile the packages
-vlog -sv tb/axis_crc32_mpeg2_pkg_prm.sv
+vlog -sv rtl/axis_crc32_mpeg2_pkg_prm.sv
 vlog -sv tb/axis_crc32_mpeg2_pkg_tb.sv
 
 # Compile the interfaces
-vlog -sv tb/axis_crc32_mpeg2_if.sv
+vlog -sv rtl/axis_crc32_mpeg2_if.sv
 
 # Compile the design and testbench
-vlog -sv tb/axis_crc32_mpeg2.sv
+vlog -sv rtl/axis_crc32_mpeg2.sv
 vlog -sv tb/axis_crc32_mpeg2_tb.sv
 
 # Simulate the testbench
