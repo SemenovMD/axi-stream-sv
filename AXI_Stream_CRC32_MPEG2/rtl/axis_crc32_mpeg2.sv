@@ -44,6 +44,9 @@
  * Email : makcsem64@gmail.com
  * Date  : 23.05.2024
  *
+ * IMPORTANT: Please make sure that the parameter AXI_DATA_WIDTH = 32, as this module supports only 32-bit input data.
+ * For 64-bit words, please use a different crc32_mpeg2 algorithm.
+ *
  */
 
 `timescale 1ns / 1ps
@@ -61,8 +64,8 @@ module axis_crc32_mpeg2
     output  logic                               crc_done,
 
     // Interface
-    axis_if.m_axis                  		m_axis,
-    axis_if.s_axis                  		s_axis
+    axis_if.m_axis                  		    m_axis,
+    axis_if.s_axis                  		    s_axis
 );
 
     logic   [$clog2(AXI_DATA_WIDTH):0]          crc_count;
