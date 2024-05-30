@@ -61,8 +61,8 @@ module axis_fifo
     output  logic                           fifo_full,
 
     // Interface
-    axis_if.m_axis                  		m_axis,
-    axis_if.s_axis                  		s_axis
+    axis_if.m_axis                          m_axis,
+    axis_if.s_axis                          s_axis
 );
 
     logic [AXI_DATA_WIDTH-1:0] mem [AXI_DATA_DEPTH];

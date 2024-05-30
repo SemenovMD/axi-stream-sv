@@ -64,8 +64,8 @@ module axis_crc32_mpeg2
     output  logic                               crc_done,
 
     // Interface
-    axis_if.m_axis                  		    m_axis,
-    axis_if.s_axis                  		    s_axis
+    axis_if.m_axis                              m_axis,
+    axis_if.s_axis                              s_axis
 );
 
     logic   [$clog2(AXI_DATA_WIDTH):0]          crc_count;
