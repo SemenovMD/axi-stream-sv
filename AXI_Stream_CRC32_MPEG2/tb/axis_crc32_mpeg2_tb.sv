@@ -5,8 +5,8 @@ module axis_crc32_mpeg2_tb;
     import axis_crc32_mpeg2_pkg_prm::*;
     import axis_crc32_mpeg2_pkg_tb::*;
 
-    axis_crc32_mpeg2_if m_axis();
-    axis_crc32_mpeg2_if s_axis();
+    axis_if m_axis();
+    axis_if s_axis();
 
     crc32_mpeg2 crc32_mpeg2_inst;
 

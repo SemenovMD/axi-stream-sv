@@ -1,4 +1,4 @@
-interface axis_crc32_mpeg2_if;
+interface axis_if;
 
     import axis_crc32_mpeg2_pkg_prm::AXI_DATA_WIDTH;
 
