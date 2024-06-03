@@ -27,7 +27,7 @@ module axis_uart_tx
 
     logic [AXI_DATA_WIDTH-1:0]          uart_buf;                  
 
-    // FSM State
+    // FSM UART_TX
     typedef enum logic [2:0]
     {  
         UART_TX_IDLE,
@@ -41,7 +41,6 @@ module axis_uart_tx
 
     state_type_uart_tx state_tx;
 
-    // FSM
     always_ff @(posedge aclk)
     begin
         if (!aresetn)
