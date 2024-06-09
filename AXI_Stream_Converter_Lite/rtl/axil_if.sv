@@ -30,7 +30,7 @@ interface axil_if;
     logic                               rvalid;
     logic                               rready;
 
-    modport m_axil
+    modport s_axil
     (
         input  awaddr,
         input  awvalid,
@@ -44,7 +44,7 @@ interface axil_if;
         output bresp,
         output bvalid,
         input  bready,
-        
+
         input  araddr,
         input  arvalid,
         output arready,
@@ -53,31 +53,6 @@ interface axil_if;
         output rresp,
         output rvalid,
         input  rready
-    );
-
-    modport s_axil
-    (
-        output awaddr,
-        output awvalid,
-        input  awready,
-
-        output wdata,
-        output wstrb,
-        output wvalid,
-        input  wready,
-
-        input  bresp,
-        input  bvalid,
-        output bready,
-
-        output araddr,
-        output arvalid,
-        input  arready,
-
-        input  rdata,
-        input  rresp,
-        input  rvalid,
-        output rready
     );
 
 endinterface
