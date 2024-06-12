@@ -1,6 +1,8 @@
-package axis_crc32_mpeg2_pkg_tb;
+package pkg_tb;
 
-    import axis_crc32_mpeg2_pkg_prm::AXI_DATA_WIDTH;
+    parameter AXI_DATA_WIDTH = 32;
+    parameter POLY_CRC = 32'h04C1_1DB7;
+    parameter INIT_CRC = 32'hFFFF_FFFF;
 
     parameter AXI_TRAN_MIN_DELAY = 1;
     parameter AXI_TRAN_MAX_DELAY = 17;

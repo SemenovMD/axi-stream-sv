@@ -53,7 +53,9 @@
 
 module axis_crc32_mpeg2
 
-    import axis_crc32_mpeg2_pkg_prm::*;
+#(parameter AXI_DATA_WIDTH = 32,
+            POLY_CRC       = 32'h04C1_1DB7,
+            INIT_CRC       = 32'hFFFF_FFFF)
 
 (
     // Global signals
@@ -71,7 +73,7 @@ module axis_crc32_mpeg2
     logic   [$clog2(AXI_DATA_WIDTH):0]          crc_count;
     logic   [AXI_DATA_WIDTH-1:0]                crc_buf;
 
-    // FSM State
+    // FSM CRC32_MPEG2
     typedef enum logic [1:0]
     {  
         CRC_IDLE,
@@ -82,7 +84,6 @@ module axis_crc32_mpeg2
 
     state_type_crc state_crc;
 
-    // FSM
     always_ff @(posedge aclk)
     begin
         if (!aresetn)
@@ -155,6 +156,5 @@ module axis_crc32_mpeg2
             endcase
         end
     end
-
 
 endmodule

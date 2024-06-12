@@ -2,8 +2,7 @@
 
 module axis_crc32_mpeg2_tb;
 
-    import axis_crc32_mpeg2_pkg_prm::*;
-    import axis_crc32_mpeg2_pkg_tb::*;
+    import pkg_tb::*;
 
     axis_if m_axis();
     axis_if s_axis();
@@ -19,8 +18,15 @@ module axis_crc32_mpeg2_tb;
     logic   [$clog2(AXI_TRAN_MAX_WAIT)-1:0]     count;
     logic   [1:0]                               flag;
 
-    axis_crc32_mpeg2 axis_crc32_mpeg2_inst
+    axis_crc32_mpeg2 #
+    (
+        .AXI_DATA_WIDTH(AXI_DATA_WIDTH),
+        .POLY_CRC(POLY_CRC),
+        .INIT_CRC(INIT_CRC)
+    )
     
+    axis_crc32_mpeg2_inst
+
     (
         .aclk(aclk),
         .aresetn(aresetn),
