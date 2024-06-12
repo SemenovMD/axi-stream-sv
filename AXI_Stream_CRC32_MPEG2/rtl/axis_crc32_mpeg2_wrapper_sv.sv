@@ -23,8 +23,8 @@ module axis_crc32_mpeg2_wrapper_sv
     input  logic                            m_axis_tready
 );
 
-    axis_if m_axis();
-    axis_if s_axis();
+    axis_if #(.AXI_DATA_WIDTH(AXI_DATA_WIDTH)) m_axis();
+    axis_if #(.AXI_DATA_WIDTH(AXI_DATA_WIDTH)) s_axis();
 
     generate
         assign m_axis_tdata  = m_axis.tdata;
