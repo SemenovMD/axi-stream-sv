@@ -46,7 +46,9 @@
 
 module axis_converter_lite
 
-    import axis_converter_lite_pkg_prm::*;
+#(parameter AXI_DATA_WIDTH = 32,
+            AXI_ADDR_WIDTH = 32,
+            AXI_ADDR       = 32'h0000_0001)
 
 (
     // Global signals
