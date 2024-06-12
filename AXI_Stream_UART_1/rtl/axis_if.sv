@@ -1,6 +1,6 @@
 interface axis_if;
 
-    import axis_uart_pkg_prm::AXI_DATA_WIDTH;
+    parameter AXI_DATA_WIDTH = 32;
 
     logic   [AXI_DATA_WIDTH-1:0]    tdata;
     logic                           tvalid;

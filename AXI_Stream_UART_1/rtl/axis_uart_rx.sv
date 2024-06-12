@@ -1,6 +1,11 @@
 module axis_uart_rx
 
-    import axis_uart_pkg_prm::*;
+#(parameter AXI_DATA_WIDTH    = 8,
+            CLOCK             = 100_000_000,
+            BAUD_RATE         = 115_200,
+            DATA_BITS         = 8,
+            STOP_BITS         = 1,
+            PARITY_BITS       = 0)
 
 (
     // Global signals

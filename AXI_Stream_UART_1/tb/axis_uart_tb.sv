@@ -2,11 +2,10 @@
 
 module axis_uart_tb;
 
-    import axis_uart_pkg_prm::*;
-    import axis_uart_pkg_tb::*;
+    import pkg_tb::*;
 
-    axis_if m_axis();
-    axis_if s_axis();
+    axis_if #(.AXI_DATA_WIDTH(AXI_DATA_WIDTH)) m_axis();
+    axis_if #(.AXI_DATA_WIDTH(AXI_DATA_WIDTH)) s_axis();
 
     logic                   aclk;
     logic                   aresetn;
@@ -18,9 +17,19 @@ module axis_uart_tb;
     logic [1:0]             rx_error;
     logic                   tx_done;
 
-    logic   [1:0]                               flag;
+    logic   [1:0]           flag;
 
-    axis_uart_transceiver axis_uart_transceiver_inst
+    axis_uart_transceiver #
+    (
+        .AXI_DATA_WIDTH(AXI_DATA_WIDTH),
+        .CLOCK(CLOCK),
+        .BAUD_RATE(BAUD_RATE),
+        .DATA_BITS(DATA_BITS),
+        .STOP_BITS(STOP_BITS),
+        .PARITY_BITS(PARITY_BITS)
+    )
+    
+    axis_uart_transceiver_inst
     
     (
         .aclk(aclk),

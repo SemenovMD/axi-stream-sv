@@ -5,8 +5,7 @@ transcript on
 vlib work
 
 # Compile the packages
-vlog -sv rtl/axis_uart_pkg_prm.sv
-vlog -sv tb/axis_uart_pkg_tb.sv
+vlog -sv tb/pkg_tb.sv
 
 # Compile the interfaces
 vlog -sv rtl/axis_if.sv

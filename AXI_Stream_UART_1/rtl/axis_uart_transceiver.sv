@@ -63,14 +63,19 @@
 
 module axis_uart_transceiver
 
-    import axis_uart_pkg_prm::*;
+#(parameter AXI_DATA_WIDTH    = 8,
+            CLOCK             = 100_000_000,
+            BAUD_RATE         = 115_200,
+            DATA_BITS         = 8,
+            STOP_BITS         = 1,
+            PARITY_BITS       = 0)
 
 (
     // Global signals
     input   logic                               aclk,
     input   logic                               aresetn,
 
-    //Transmitter
+    // Transmitter
     input   logic                               uart_rx,
     output  logic                               uart_tx,
 
@@ -84,13 +89,33 @@ module axis_uart_transceiver
     axis_if.s_axis                              s_axis
 );
 
-    axis_uart_tx axis_uart_tx_inst
+    axis_uart_tx #
+    (
+        .AXI_DATA_WIDTH(AXI_DATA_WIDTH),
+        .CLOCK(CLOCK),
+        .BAUD_RATE(BAUD_RATE),
+        .DATA_BITS(DATA_BITS),
+        .STOP_BITS(STOP_BITS),
+        .PARITY_BITS(PARITY_BITS)
+    )
     
+    axis_uart_tx_inst
+
     (
         .*
     );
 
-    axis_uart_rx axis_uart_rx_inst
+    axis_uart_rx #
+    (
+        .AXI_DATA_WIDTH(AXI_DATA_WIDTH),
+        .CLOCK(CLOCK),
+        .BAUD_RATE(BAUD_RATE),
+        .DATA_BITS(DATA_BITS),
+        .STOP_BITS(STOP_BITS),
+        .PARITY_BITS(PARITY_BITS)
+    )
+    
+    axis_uart_rx_inst
 
     (
         .*
