@@ -29,7 +29,7 @@ module axis_crc32_mpeg2_wrapper_v
         .INIT_CRC(INIT_CRC)
     ) 
 
-    axis_crc32_mpeg2_wrapper_v_inst
+    axis_crc32_mpeg2_wrapper_sv_inst
     
     (
         .aclk(aclk),
